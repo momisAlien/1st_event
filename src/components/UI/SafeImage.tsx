@@ -26,5 +26,5 @@ export function SafeImage({ src, alt, className = "", fallbackLabel = "이미지
     );
   }
 
-  return <img src={src} alt={alt} className={className} onError={() => setFailed(true)} draggable={false} />;
+  return <img src={src} alt={alt} className={className} onError={() => setFailed(true)} draggable={false} loading="lazy" decoding="async" />;
 }

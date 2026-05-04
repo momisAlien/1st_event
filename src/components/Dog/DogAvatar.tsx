@@ -3,16 +3,16 @@ import { SafeImage } from "../UI/SafeImage";
 import { DogMotion, type DogMotionState } from "./DogMotion";
 
 const dogImageByState: Record<DogMotionState, string> = {
-  idle: "/assets/dog/dog-main.png",
-  happy: "/assets/dog/dog-happy.png",
-  thinking: "/assets/dog/dog-main.png",
-  talking: "/assets/dog/dog-main.png",
-  letter: "/assets/dog/dog-letter.png",
-  celebrate: "/assets/dog/dog-celebrate.png",
-  petting: "/assets/dog/dog-petting.png",
-  fingerHeart: "/assets/dog/dog-heart.png",
-  poke: "/assets/dog/dog-poke.png",
-  wave: "/assets/dog/dog-wave.png",
+  idle: "/assets/dog/optimized/dog-main.png",
+  happy: "/assets/dog/optimized/dog-happy.png",
+  thinking: "/assets/dog/optimized/dog-main.png",
+  talking: "/assets/dog/optimized/dog-main.png",
+  letter: "/assets/dog/optimized/dog-letter.png",
+  celebrate: "/assets/dog/optimized/dog-happy.png",
+  petting: "/assets/dog/optimized/dog-petting.png",
+  fingerHeart: "/assets/dog/optimized/dog-heart.png",
+  poke: "/assets/dog/optimized/dog-poke.png",
+  wave: "/assets/dog/optimized/dog-wave.png",
 };
 
 type DogAvatarProps = {

@@ -65,12 +65,12 @@ export default function TarotScene({ onSelectCard, onNext }: TarotSceneProps) {
             transition={{ duration: 0.55, ease: "easeOut" }}
             className="tarot-draw-result mx-auto grid w-full max-w-6xl gap-5 rounded-[38px] px-4 py-6 text-center sm:px-8 sm:py-7"
           >
-            <DogAvatar state="talking" imageSrc="/assets/dog/dog-main.png" className="w-64 sm:w-96" />
+            <DogAvatar state="talking" imageSrc="/assets/dog/optimized/dog-main.png" className="w-64 sm:w-96" />
             <DogSpeechBubble className="big-oracle-speech oracle-speech mx-auto w-full max-w-4xl text-lg sm:text-2xl">{readingMessage}</DogSpeechBubble>
             <div className="tarot-result-heading" aria-label="뽑은 카드">
-              <span>✦</span>
+              <span>?</span>
               <strong>뽑은 카드</strong>
-              <span>✦</span>
+              <span>?</span>
             </div>
             <div className="tarot-result-grid mx-auto grid w-full max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8">
               {selectedCards.map((card, index) => (
@@ -108,7 +108,7 @@ export default function TarotScene({ onSelectCard, onNext }: TarotSceneProps) {
 
             <div className="tarot-oracle-table">
               <div className="tarot-center-dog-wrap">
-                <DogAvatar state={selectedCards.length ? "talking" : "idle"} imageSrc="/assets/dog/dog-main.png" className="tarot-center-dog w-96 sm:w-[34rem]" />
+                <DogAvatar state={selectedCards.length ? "talking" : "idle"} imageSrc="/assets/dog/optimized/dog-main.png" className="tarot-center-dog w-96 sm:w-[34rem]" />
               </div>
               <TarotSpread selectedCards={selectedCards} onSelect={selectCard} layout="orbit" />
             </div>

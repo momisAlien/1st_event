@@ -725,7 +725,7 @@ button { -webkit-tap-highlight-color: transparent; }
   z-index: 0;
   background:
     linear-gradient(180deg, rgba(10, 6, 17, 0.18), rgba(10, 6, 17, 0.42)),
-    url("/assets/background/tarot-room.png") center / cover no-repeat;
+    url("/assets/background/tarot-room-optimized.jpg") center / cover no-repeat;
   opacity: 0.86;
   filter: saturate(1.08) contrast(1.04);
 }
@@ -981,7 +981,7 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 
 .velvet-cloth::before {
-  content: "✦  ☾  ✧  ✦  ✧  ☽  ✦";
+  content: "?  ?  ?  ?  ?  ?  ?";
   position: absolute;
   left: 50%;
   top: 36%;
@@ -2088,7 +2088,7 @@ body:has(.mystic-room.photo-ready) .oracle-speech > span {
 .anniversary-finale-stage {
   background:
     linear-gradient(180deg, rgba(5, 2, 10, 0.10), rgba(5, 2, 10, 0.46)),
-    url("/assets/background/anniversary-finale.png") center / cover no-repeat !important;
+    url("/assets/background/anniversary-finale-optimized.jpg") center / cover no-repeat !important;
   backdrop-filter: none !important;
   box-shadow: 0 34px 110px rgba(5, 2, 8, 0.54), inset 0 0 70px rgba(255, 255, 255, 0.08) !important;
 }

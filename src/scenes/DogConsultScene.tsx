@@ -122,7 +122,7 @@ export default function DogConsultScene({ selectedTarotCards, onNext }: DogConsu
             <DogSpeechBubble className="consult-reading-speech">
               {dogLines[dogLineIndex]}
             </DogSpeechBubble>
-            <DogAvatar state="talking" imageSrc="/assets/dog/dog-main.png" className="consult-reading-dog w-80 sm:w-[27rem]" onClick={nextDogLine} />
+            <DogAvatar state="talking" imageSrc="/assets/dog/optimized/dog-main.png" className="consult-reading-dog w-80 sm:w-[27rem]" onClick={nextDogLine} />
             <button type="button" onClick={nextDogLine} className="consult-dog-hint">포도를 눌러봐</button>
           </div>
 

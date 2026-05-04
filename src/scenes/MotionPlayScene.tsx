@@ -15,6 +15,7 @@ import { useGestureRecognition } from "../hooks/useGestureRecognition";
 import { useHandTracking } from "../hooks/useHandTracking";
 import { loadSavedHandPoses, matchSavedHandPose } from "../lib/customGestureStorage";
 import type { GestureName } from "../lib/gestureUtils";
+import { preloadImages } from "../lib/imageUtils";
 
 type MotionPlaySceneProps = {
   onNext: () => void;
@@ -42,6 +43,10 @@ export default function MotionPlayScene({ onNext, onTest }: MotionPlaySceneProps
   const candidateFrameCountRef = useRef(0);
   const speechCycleRef = useRef<Partial<Record<GestureName, number>>>({});
   const canReceiveLetter = interactionCount >= appConfig.requiredPlayInteractions;
+
+  useEffect(() => {
+    preloadImages(Object.values(dogGestureReactions).map((reaction) => reaction.image).concat("/assets/dog/optimized/dog-letter.png"));
+  }, []);
 
   const pickSpeech = (reaction: DogReaction) => {
     if (!Array.isArray(reaction.speech)) return reaction.speech;
@@ -97,7 +102,7 @@ export default function MotionPlayScene({ onNext, onTest }: MotionPlaySceneProps
   useEffect(() => {
     if (!canReceiveLetter) return;
     setDogState("letter");
-    setDogImageSrc("/assets/dog/dog-letter.png");
+    setDogImageSrc("/assets/dog/optimized/dog-letter.png");
     setSpeech("좋아! 포도랑 충분히 놀았어. 이제 내가 숨겨둔 편지를 가져올게.");
     setLastReactionLabel("편지 준비 완료");
   }, [canReceiveLetter]);

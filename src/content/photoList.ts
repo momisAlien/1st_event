@@ -1,5 +1,6 @@
 export type PhotoMemory = {
   src: string;
+  thumbSrc?: string;
   date: string;
   title: string;
   body: string;

@@ -1,12 +1,13 @@
 ﻿import { Heart, MoonStar, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DogAvatar } from "../components/Dog/DogAvatar";
 import { DogSpeechBubble } from "../components/Dog/DogSpeechBubble";
 import { HeartBurst } from "../components/Effects/HeartBurst";
 import { PetalParticles } from "../components/Effects/PetalParticles";
 import { FullScreenStage } from "../components/Layout/FullScreenStage";
 import { Button } from "../components/UI/Button";
+import { preloadImages } from "../lib/imageUtils";
 
 const floatingCards = [
   { label: "LOVE", rotate: -11, x: "8%", y: "22%" },
@@ -16,11 +17,11 @@ const floatingCards = [
 ];
 
 const podoImages = [
-  "/assets/dog/dog-happy.png",
-  "/assets/dog/dog-heart.png",
-  "/assets/dog/dog-v.png",
-  "/assets/dog/dog-wave.png",
-  "/assets/dog/dog-thinking.png",
+  "/assets/dog/optimized/dog-happy.png",
+  "/assets/dog/optimized/dog-heart.png",
+  "/assets/dog/optimized/dog-v.png",
+  "/assets/dog/optimized/dog-wave.png",
+  "/assets/dog/optimized/dog-thinking.png",
 ];
 
 type IntroSceneProps = {
@@ -31,6 +32,10 @@ export default function IntroScene({ onStart }: IntroSceneProps) {
   const [podoImageIndex, setPodoImageIndex] = useState(0);
   const [heartTrigger, setHeartTrigger] = useState(0);
   const [speech, setSpeech] = useState("쉿... 오늘은 포도의 비밀 타로 상담소 문이 열린 날이야.");
+
+  useEffect(() => {
+    preloadImages(podoImages);
+  }, []);
 
   const petPodo = () => {
     setPodoImageIndex((index) => (index + 1) % podoImages.length);

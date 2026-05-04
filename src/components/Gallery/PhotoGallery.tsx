@@ -12,6 +12,7 @@ const placeholderPhotos: PhotoMemory[] = Array.from({ length: 30 }, (_, index) =
   const number = String(index + 1).padStart(2, "0");
   return {
     src: `/assets/coupleimage/photo-${number}.jpg`,
+    thumbSrc: `/assets/coupleimage/thumbs/photo-${number}.jpg`,
     date: `장면 ${index + 1}`,
     title: `우리의 ${index + 1}번째 장면`,
     body: "사진을 누르면 테이블 위에 놓여요",
@@ -19,6 +20,11 @@ const placeholderPhotos: PhotoMemory[] = Array.from({ length: 30 }, (_, index) =
 });
 
 const slotTilt = [-5, 3, -2, 5, -4, 2, -3, 4, -2, 3, -5, 2, -4, 4, -1, 3, -5, 2, -2, 5, -3, 1, -4, 4, -2, 3, -5, 2, -1, 4];
+
+function thumbnailFor(photo: PhotoMemory, index: number) {
+  const number = String(index + 1).padStart(2, "0");
+  return photo.thumbSrc ?? `/assets/coupleimage/thumbs/photo-${number}.jpg`;
+}
 
 export function PhotoGallery({ onDone }: PhotoGalleryProps) {
   const photos = useMemo(() => (photoList.length > 0 ? photoList : placeholderPhotos), []);
@@ -116,7 +122,7 @@ export function PhotoGallery({ onDone }: PhotoGalleryProps) {
             >
               {isPlaced ? (
                 <>
-                  <SafeImage src={photo.src} alt={photo.title} fallbackLabel="사진 자리" className="aspect-[4/5] w-full rounded-[9px] object-cover" />
+                  <SafeImage src={thumbnailFor(photo, index)} alt={photo.title} fallbackLabel="사진 자리" className="aspect-[4/5] w-full rounded-[9px] object-cover" />
                   <small>{photo.date}</small>
                   <span>{photo.title}</span>
                 </>
